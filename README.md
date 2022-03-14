@@ -6,12 +6,12 @@ Kubernetes Autoscaling Demo
 
 ## Tools/Components Involved
 
-- Minikube
+- Minikube - K8s Utility
 - Kubectl - K8s CLI
-- Deployment
+- Deployment - K8s Component
 - Helm (Package Manager) - Open Source
 - Ingress rules and Ingress Controller (Nginx Ingress Controller) - Open Source
 - Locust - Open Source
 - Prometheus - Open Source
-- Horizontal Pod Autoscaling (HPA) - K8s Native
+- Horizontal Pod Autoscaling (HPA) - K8s Component
 - Kubernetes Event-Driven Autoscaler (KEDA) - Open Source
