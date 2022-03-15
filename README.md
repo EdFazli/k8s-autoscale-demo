@@ -22,7 +22,7 @@ Kubernetes Autoscaling Demo
 2. Exposing the app to external via Nginx Ingress Controller
 3. Setup Prometheus server to collect metrics
 4. Run load testing using Locust
-5. Implement KEDA to forward the metrics from Prometheus server to HPA
+5. Implement KEDA to store and expose the metrics from Prometheus server to HPA
 6. HPA will do the scaling out of Nginx Ingress Controller to handle to high traffic volumes
 
 ## Demo
@@ -48,7 +48,7 @@ Kubernetes Autoscaling Demo
 
 ```
 
-    helm install main nginx-stable/nginx-ingress \
+  helm install main nginx-stable/nginx-ingress \
   --set controller.watchIngressWithoutClass=true
   --set controller.service.type=NodePort \
   --set controller.service.httpPort.nodePort=30005 
@@ -80,3 +80,40 @@ Kubernetes Autoscaling Demo
 |`nginx_connections_writing`   | Gauge   | Connections where NGINX is writing the response back to the client |
 |`nginx_http_requests_total`   | Counter | Total http requests                   |
 
+- Find IP Address of the Nginx Ingress Controller Pod
+
+``` kubectl get pods -o wide ```
+
+- Create a Temporary Pod
+
+``` kubectl run -ti --rm=true busybox --image=busybox ```
+
+- Retrieve a list of available metrics
+
+``` wget -qO- 172.17.0.4:9113/metrics ```
+
+### 6. Install Prometheus
+
+``` helm repo add prometheus-community https://prometheus-community.github.io/helm-charts ```
+
+```
+
+  helm install prometheus prometheus-community/prometheus \
+  --set server.service.type=NodePort --set server.service.nodePort=30010
+
+```
+
+- Verify Prometheus is installed
+
+``` kubectl get pods ```
+
+- Go to Prometheus server and query Prometheus for `nginx_ingress_nginx_connections_active` metrics
+
+### 7. Install Locust
+
+- Create then apply yaml file (locust-1.yaml)
+
+``` kubectl apply -f 1-locust.yaml ```
+
+- Use locust to scale traffic
+- View Prometheus to see how ingress controller responds
