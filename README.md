@@ -34,3 +34,10 @@ Kubernetes Autoscaling Demo
 ### 2. Install the App
 
 - Create a Deployment (deployment-1.yaml)
+- Deploy PodInfo App
+
+``` kubectl apply -f deployment-1.yaml ```
+
+- Confirm App Deployment
+
+``` kubectl get pods ```
