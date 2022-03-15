@@ -24,3 +24,13 @@ Kubernetes Autoscaling Demo
 4. Run load testing using Locust
 5. Implement KEDA to forward the metrics from Prometheus server to HPA
 6. HPA will do the scaling out of Nginx Ingress Controller to handle to high traffic volumes
+
+## Demo
+
+### 1. Create the Cluster
+
+``` minikube start ```
+
+### 2. Install the App
+
+- Create a Deployment (deployment-1.yaml)
