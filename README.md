@@ -150,4 +150,4 @@ Kubernetes Autoscaling Demo
 
 ## Reference
 
-![Autoscaling with KEDA](KEDAautoscale.jpg)
+![Autoscaling with KEDA](KEDAautoscale.jpeg)
