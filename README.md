@@ -142,4 +142,12 @@ Kubernetes Autoscaling Demo
 ### 10. Test Autoscaling
 
 - Use locust to generate traffic
-- 
+- View active connections in Prometheus
+- Observe autoscaling
+- Inspect KEDA HPA
+
+``` kubectl get hpa ```
+
+## Reference
+
+![Autoscaling with KEDA](KEDA autoscale.jpeg)
