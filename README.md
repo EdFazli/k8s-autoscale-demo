@@ -116,5 +116,10 @@ Kubernetes Autoscaling Demo
 ``` kubectl apply -f 1-locust.yaml ```
 
 - Use locust to scale traffic
-<mark>Host: <http://main-nginx-ingress></mark>
+
+> Host: <http://main-nginx-ingress>
+
 - View Prometheus to see how ingress controller responds
+
+### 8. Install KEDA
+
