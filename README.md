@@ -123,3 +123,16 @@ Kubernetes Autoscaling Demo
 
 ### 8. Install KEDA
 
+- Add Repo and Install KEDA
+
+``` helm repo add kedacore https://kedacore.github.io/charts ```
+``` helm install keda kedacore/keda ```
+
+- Verify KEDA
+
+``` kubectl get pods ```
+
+### 9. Configure Autoscaling
+
+- Create yaml file to define how Nginx Ingress Controller will scale using KEDA object (scaled-object-1.yaml)
+
