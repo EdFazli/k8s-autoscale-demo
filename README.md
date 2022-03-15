@@ -126,6 +126,7 @@ Kubernetes Autoscaling Demo
 - Add Repo and Install KEDA
 
 ``` helm repo add kedacore https://kedacore.github.io/charts ```
+
 ``` helm install keda kedacore/keda ```
 
 - Verify KEDA
@@ -134,5 +135,11 @@ Kubernetes Autoscaling Demo
 
 ### 9. Configure Autoscaling
 
-- Create yaml file to define how Nginx Ingress Controller will scale using KEDA object (scaled-object-1.yaml)
+- Create and submit yaml file to define how Nginx Ingress Controller will scale using KEDA object (scaled-object-1.yaml)
 
+``` kubectl apply -f scaled-object-1.yaml ```
+
+### 10. Test Autoscaling
+
+- Use locust to generate traffic
+- 
