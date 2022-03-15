@@ -41,3 +41,24 @@ Kubernetes Autoscaling Demo
 - Confirm App Deployment
 
 ``` kubectl get pods ```
+
+### 3. Install Nginx Ingress Controller using Helm
+
+``` helm repo add nginx-stable https://helm.nginx.com/stable ```
+
+```
+
+    helm install main nginx-stable/nginx-ingress \
+  --set controller.watchIngressWithoutClass=true
+  --set controller.service.type=NodePort \
+  --set controller.service.httpPort.nodePort=30005 
+
+```
+
+- Verify Nginx Ingress Controller is running
+
+``` kubectl get pods ```
+
+### 4. Route Traffic to your App
+
+- Create an Ingress Manifest (ingress-1.yaml)
