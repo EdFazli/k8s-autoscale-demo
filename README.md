@@ -115,7 +115,7 @@ Kubernetes Autoscaling Demo
 
 - Create then apply yaml file (locust-1.yaml)
 
-``` kubectl apply -f 1-locust.yaml ```
+``` kubectl apply -f locust-1.yaml ```
 
 - Use locust to scale traffic
 
