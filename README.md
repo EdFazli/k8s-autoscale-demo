@@ -109,6 +109,8 @@ Kubernetes Autoscaling Demo
 
 - Go to Prometheus server and query Prometheus for `nginx_ingress_nginx_connections_active` metrics
 
+``` minikube service prometheus-server ```
+
 ### 7. Install Locust
 
 - Create then apply yaml file (locust-1.yaml)
