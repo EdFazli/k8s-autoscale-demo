@@ -64,7 +64,7 @@ Kubernetes Autoscaling Demo
 - Create an Ingress Manifest (ingress-1.yaml)
 - Submit the ingress manifest
 
-``` kubectl apply -f 2-ingress.yaml ```
+``` kubectl apply -f ingress-1.yaml ```
 
 ### 5. Explore Metrics
 
